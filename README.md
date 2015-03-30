@@ -6,12 +6,14 @@ an offline token generator and validator
 
 ## What is it and what does it do?
 
-It works on top of one dynamic variable, an expired timestamp, we simply create two
-things from it: an **hash part** and an **obfuscated timestamp**.
+It works on top of one dynamic variable, an **expired timestamp**. We simply create
+two strings from it: an **hash part** and an **obfuscated timestamp**, then they are
+concatenated into a single string and voilá, we have a token!
 
-So, whenever you hit `.generate`, it will render a different token that could be
-always validated (even on different processes, or different nodes) as since you
-configure it with same `salt` and `timestampMap`.
+Each time you call `.generate` it will generate a different token because
+**expiring timestamp** is always changing. Until your server reaches token's
+**expiring timestamp** they will always be valid, even on different processes,
+or different nodes, as since you share between them the exact same configuration.
 
 Seems complex?
 ( If not, you really should dig on this and help us to make it even better )
@@ -37,7 +39,7 @@ Seems complex?
 ## Usage
 
 Token Generator is designed to have a simple impementation.
-You just need to create an TG with your own options just like the example above:
+You just need to create an instace of TokenGenerator with your own options just like the example above:
 
 ```js
 
@@ -73,7 +75,7 @@ if ( TokenGenerator.isValid( token ) ) {
 
 ```
 
-If you catch an invalid token, you could check why it is invalid by validating
+If you catch an invalid token, you could check why it is invalid by checking
 manually with `.validate`
 
 ```js
