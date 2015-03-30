@@ -1,0 +1,47 @@
+{
+  "name": "token-generator",
+  "version": "1.0.0",
+  "description": "offline token generator and validator",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha --globals setImmediate,clearImmediate --check-leaks --colors -t 10000 --reporter spec $(find test/* -name '*.test.js')"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/findhit/token-generator.git"
+  },
+  "keywords": [
+    "token",
+    "generator",
+    "offline",
+    "off-line",
+    "generation",
+    "hash",
+    "crypto",
+    "timestamp",
+    "confirmation",
+    "validate",
+    "validation",
+    "validator",
+    "generater",
+    "findhit"
+  ],
+  "author": "José Moreira <jose.moreira@findhit.com>",
+  "license": "GPL v3",
+  "bugs": {
+    "url": "https://github.com/findhit/token-generator/issues"
+  },
+  "homepage": "https://github.com/findhit/token-generator",
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "mocha": "^2.2.1"
+  },
+  "dependencies": {
+    "debug": "^2.1.3",
+    "findhit-class": "^0.1.1",
+    "findhit-util": "^0.2.7"
+  }
+}
