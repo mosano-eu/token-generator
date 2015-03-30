@@ -4,7 +4,7 @@
 
 an offline token generator and validator
 
-## What does it does?
+## What is it and what does it do?
 
 It works on top of one dynamic variable, an expired timestamp, we simply create two
 things from it: an **hash part** and an **obfuscated timestamp**.
